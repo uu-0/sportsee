@@ -16,6 +16,7 @@ const NavBar = styled.div`
   const Logo = styled.img`
     width: 178px;
     height: 60px;
+    margin-left: -40px;
   `
 
 
