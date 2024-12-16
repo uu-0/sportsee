@@ -1,5 +1,4 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
 
 import LogoSportSee from '../utils/logo.svg'
 
@@ -21,36 +20,28 @@ const NavBar = styled.div`
   `
 
 
-  const StyledNavLink = styled(NavLink)`
+  const FakeLink = styled.p`
     color: ${colors.white};
     font-size: 24px;
-    text-decoration: none;
+    cursor: pointer;
   `
 
 function Header() {
   return (
     <NavBar>
       <Logo src={LogoSportSee} alt='logo SportSee'/>
-        <StyledNavLink
-          to='/'
-        >
-          Accueil
-        </StyledNavLink>
-        <StyledNavLink
-          to='/profil'
-        >
-          Profil
-        </StyledNavLink>
-        <StyledNavLink
-          to='/reglages'
-        >
-          Réglages
-        </StyledNavLink>
-        <StyledNavLink
-          to='/communaute'
-        >
-          Communauté
-        </StyledNavLink>
+      <FakeLink>
+        Accueil
+      </FakeLink>
+      <FakeLink>
+        Profil
+      </FakeLink>
+      <FakeLink>
+        Réglages
+      </FakeLink>
+      <FakeLink>
+        Communauté
+      </FakeLink>
     </NavBar>
   );
 }
