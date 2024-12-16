@@ -12,6 +12,7 @@ const NavBar = styled.div`
     align-items: center;
     height: 91px;
     background-color: ${colors.black};
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   `
   const Logo = styled.img`
     width: 178px;
