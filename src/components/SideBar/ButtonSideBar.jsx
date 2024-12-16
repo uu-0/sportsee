@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import colors from '../utils/style/colors';
+import colors from '../../utils/style/colors';
 
 const Button = styled.div`
     width: 64px;

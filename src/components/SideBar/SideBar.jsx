@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ButtonSideBar from './ButtonSideBar';
+import ButtonSideBar from './ButtonSideBar.jsx'
 
 import styled from 'styled-components';
-import colors from '../utils/style/colors';
+import colors from '../../utils/style/colors';
 
 const SideBarContainer = styled.div`
     position: relative;
