@@ -12,6 +12,7 @@ const WelcomeText = styled.p`
   color: ${colors.black};
   font-size: 48px;
   font-weight: 600;
+  margin-bottom: 25px;
 `;
 
 const WelcomeSpan = styled.span`
@@ -19,7 +20,7 @@ const WelcomeSpan = styled.span`
 `;
 
 function Welcome() {
-  const { userId } = useParams(); //récupération du userId depuis l'URL
+  const { userId } = useParams();
   const [userName, setUserName] = useState('');
 
   useEffect(() => {

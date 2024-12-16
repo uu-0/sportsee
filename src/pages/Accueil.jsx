@@ -16,6 +16,11 @@ const DashBoard = styled.div`
   padding-right: 100px;
 `
 
+const Congratulation = styled.p`
+  font-size: 18px;
+  font-weight: 300;
+`
+
 
 
 function Accueil() {
@@ -24,6 +29,7 @@ function Accueil() {
       <SideBar/>
       <DashBoard>
         <Welcome />
+        <Congratulation>Félicitation ! Vous avez explosé vos objectifs hier 👏</Congratulation>
       </DashBoard>
     </Container>
   );

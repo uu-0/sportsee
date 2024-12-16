@@ -22,6 +22,10 @@ root.render(
       <Header />
       <Routes>
         <Route path="/:userId" element={<Accueil />} />
+        {/* 
+            <Route path="/:userId/activity" element={<Accueil />} />
+            <Route path="/:userId/average-sessions" element={<Accueil />} /> 
+        */}
       </Routes>
     </Router>
   </React.StrictMode>
