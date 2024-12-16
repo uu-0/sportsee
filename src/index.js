@@ -1,27 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import {createGlobalStyle} from 'styled-components';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { createGlobalStyle } from 'styled-components';
 
 import Accueil from './pages/Accueil';
 import Header from './components/Header';
-
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
   }
-`
+`;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <GlobalStyle/>
-      <Header/>
+      <GlobalStyle />
+      <Header />
       <Routes>
-        <Route path="/" element={<Accueil />} />
+        <Route path="/:userId" element={<Accueil />} />
       </Routes>
     </Router>
   </React.StrictMode>

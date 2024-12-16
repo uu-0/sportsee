@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import SideBar from '../components/SideBar/SideBar';
+import Welcome from '../components/Welcome';
 
 import styled from 'styled-components';
-import colors from '../utils/style/colors';
 
-const AccueilContainer = styled.div`
+const Container = styled.div`
   display: flex;
 `
 
@@ -16,37 +16,16 @@ const DashBoard = styled.div`
   padding-right: 100px;
 `
 
-const WelcomeText = styled.p`
-  color: ${colors.black};
-  font-size: 48px;
-  font-weight: 600;
-`
-
-const WelcomeSpan = styled.span`
-  color: ${colors.red}
-`
-
 
 
 function Accueil() {
-  //état pour stocker le nom de l'user
-  const [userName, setUserName] = useState('');
-
-  //simulation récupération de données utilisateur
-  useEffect(() => {
-    //données mockées
-    const mockUser = { firstName: 'Jane', lastName: 'Doe' };
-    //mise à jour de l'état avec le prénom
-    setUserName(mockUser.firstName); 
-  }, []); //exécuté une seule fois après le montage du composant
-
   return (
-    <AccueilContainer>
+    <Container>
       <SideBar/>
       <DashBoard>
-        <WelcomeText>Bonjour <WelcomeSpan>{userName}</WelcomeSpan></WelcomeText>
+        <Welcome />
       </DashBoard>
-    </AccueilContainer>
+    </Container>
   );
 }
 
