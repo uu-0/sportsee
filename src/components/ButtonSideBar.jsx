@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 import colors from '../utils/style/colors';
 
-const StyledLink = styled(Link)`
+const Button = styled.div`
     width: 64px;
     height: 64px;
     border-radius: 6px;
@@ -12,6 +11,7 @@ const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 `;
 const Icon = styled.img`
     width: 50%;
@@ -19,14 +19,11 @@ const Icon = styled.img`
     object-fit: contain;
 `;
 
-// ButtonSideBar Component
-function ButtonSideBar({ linkURL, iconURL }) {
+function ButtonSideBar({ iconURL }) {
   return (
-    <StyledLink
-      to={linkURL}
-    >
+    <Button>
       <Icon src={iconURL} alt="icône" />
-    </StyledLink>
+    </Button>
   );
 }
 

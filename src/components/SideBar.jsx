@@ -30,23 +30,19 @@ function SideBar() {
 
   return (
     <SideBarContainer>
-        <ButtonSideBar 
-          linkURL='/meditation'
+        <ButtonSideBar
           iconURL='/icons/meditation.svg'
         />
-        <ButtonSideBar 
-          linkURL='/natation'
+        <ButtonSideBar
           iconURL='/icons/natation.svg'
         />
         <ButtonSideBar 
-          linkURL='/cyclisme'
           iconURL='/icons/velo.svg'
         />
         <ButtonSideBar 
-          linkURL='/halterophilie'
           iconURL="/icons/poids.svg" 
         />
-        <Copyright>Copiryght, SportSee 2024</Copyright>
+        <Copyright>Copyright, SportSee 2024</Copyright>
     </SideBarContainer>
   );
 }
