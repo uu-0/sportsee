@@ -7,8 +7,8 @@ import colors from '../../utils/style/colors';
 
 const SideBarContainer = styled.div`
     position: relative;
-    width: 117px;
-    height: 90vh;
+    width: 125px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
