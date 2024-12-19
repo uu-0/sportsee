@@ -139,12 +139,13 @@ function BarChartActivity() {
             }}
             barCategoryGap="20%"
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={true}/>
             <XAxis 
               dataKey="day"
               stroke="transparent" 
               tickFormatter={(date) => dayjs(date).format('D')}
               tick={{ fill: '#74798C', fontSize: 14 }}
+              axisLine={{ stroke: '#DEDEDE', strokeWidth: 1.5 }}
             />
             <YAxis 
               yAxisId="kg"
