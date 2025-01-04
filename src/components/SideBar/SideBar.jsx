@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 import ButtonSideBar from './ButtonSideBar.jsx'
 
-import styled from 'styled-components';
-import colors from '../../utils/style/colors';
+import styled from 'styled-components'
+import colors from '../../utils/style/colors'
 
 const SideBarContainer = styled.div`
     position: relative;
@@ -15,7 +15,7 @@ const SideBarContainer = styled.div`
     justify-content: center;
     gap: 20px;
     background-color: ${colors.black};
-`;
+`
 
 const Copyright = styled.p`
     position: absolute;
@@ -44,8 +44,8 @@ function SideBar() {
         />
         <Copyright>Copyright, SportSee 2024</Copyright>
     </SideBarContainer>
-  );
+  )
 }
 
-export default SideBar;
+export default SideBar
 

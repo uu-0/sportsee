@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import styled from 'styled-components';
-import colors from '../../utils/style/colors';
+import styled from 'styled-components'
+import colors from '../../utils/style/colors'
 
 const Button = styled.div`
     width: 64px;
@@ -12,6 +12,8 @@ const Button = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
 `;
 const Icon = styled.img`
     width: 50%;
@@ -27,4 +29,4 @@ function ButtonSideBar({ iconURL }) {
   );
 }
 
-export default ButtonSideBar;
+export default ButtonSideBar
