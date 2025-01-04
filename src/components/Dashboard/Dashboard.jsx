@@ -1,13 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-import Welcome from './Welcome';
-import BarChartActivity from './BarChartActivity.jsx';
-import BottomLeftBloc from './BottomLeftBloc';
+import Welcome from './Welcome'
+import Activity from './Activity.jsx'
+
+import AverageSession from './AverageSession.jsx'
+import RadarChartComponent from './RadarChart.jsx'
+import RadialBarChart from './RadialBarChart.jsx'
+
 import Calories from './Calories';
 
 import styled from 'styled-components';
-
-import { mockUserActivity } from "../../utils/API/mockAPI.js";
 
 
 const Congratulation = styled.p`
@@ -34,6 +36,12 @@ const LeftBloc = styled.div`
   flex-direction: column;
 `
 
+const CardContainer = styled.div`
+  display: flex;
+  margin-top: 50px;
+  gap: 50px;
+ `
+
 const RigthBloc = styled.div`
   display: flex;
   flex-direction: column;
@@ -43,19 +51,23 @@ const RigthBloc = styled.div`
 function Dashboard() {
   return (
     <Container>
-        <Welcome />
+        <Welcome useMockData={true} />
         <Congratulation>Félicitation ! Vous avez explosé vos objectifs hier 👏</Congratulation>
         <Content>
             <LeftBloc>
-                <BarChartActivity />
-                <BottomLeftBloc />
+                <Activity useMockData={true} /> 
+                <CardContainer>
+                  <AverageSession useMockData={true} />
+                  <RadarChartComponent useMockData={true} />
+                  <RadialBarChart useMockData={true} />
+                </CardContainer>
             </LeftBloc>
             <RigthBloc>
-                <Calories />
+                <Calories  useMockData={true}/>
             </RigthBloc>
         </Content>
     </Container>
-  );
+  )
 }
 
-export default Dashboard;
+export default Dashboard
