@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 import LogoSportSee from '../utils/logo.svg'
 
-import styled from 'styled-components';
-import colors from '../utils/style/colors';
+import styled from 'styled-components'
+import colors from '../utils/style/colors'
 
 const NavBar = styled.div`
     display: flex;
@@ -46,4 +46,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Header
