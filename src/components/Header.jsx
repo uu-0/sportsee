@@ -10,8 +10,10 @@ const NavBar = styled.div`
     justify-content: space-around;
     align-items: center;
     height: 91px;
+    width: 100vw;
     background-color: ${colors.black};
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
   `
   const Logo = styled.img`
     width: 178px;
@@ -43,7 +45,7 @@ function Header() {
         Communauté
       </FakeLink>
     </NavBar>
-  );
+  )
 }
 
 export default Header

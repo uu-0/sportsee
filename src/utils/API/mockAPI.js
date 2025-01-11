@@ -8,7 +8,7 @@ export const mockUserData = {
     2: {
         id: 2,
         userInfos: { firstName: "John", lastName: "Doe", age: 28 },
-        todayScore: 0.8,
+        score: 0.8,
         keyData: { calorieCount: 2200, proteinCount: 180, carbohydrateCount: 350, lipidCount: 60 },
     }
 };
@@ -26,9 +26,6 @@ export const mockUserActivity = {
             { day: "2024-12-05", kilogram: 57.0, calories: 250 },
             { day: "2024-12-06", kilogram: 57.3, calories: 230 },
             { day: "2024-12-07", kilogram: 56.6, calories: 240 },
-            { day: "2024-12-08", kilogram: 56.2, calories: 250 },
-            { day: "2024-12-09", kilogram: 56.2, calories: 250 },
-            { day: "2024-12-10", kilogram: 56.0, calories: 250 },
         ],
     },
     2: {
@@ -41,9 +38,6 @@ export const mockUserActivity = {
             { day: "2024-12-03", kilogram: 78, calories: 190 },
             { day: "2024-12-04", kilogram: 78, calories: 230 },
             { day: "2024-12-05", kilogram: 78, calories: 240 },
-            { day: "2024-12-06", kilogram: 77, calories: 250 },
-            { day: "2024-12-07", kilogram: 77, calories: 260 },
-            { day: "2024-12-08", kilogram: 77, calories: 270 },
         ],
     }
 };
@@ -59,10 +53,6 @@ export const mockUserAverageSessions = {
             { day: 5, sessionLength: 30 },
             { day: 6, sessionLength: 20 },
             { day: 7, sessionLength: 45 },
-            { day: 8, sessionLength: 40 },
-            { day: 9, sessionLength: 30 },
-            { day: 10, sessionLength: 50 },
-            { day: 11, sessionLength: 50 },
         ],
     },
     2: {
@@ -75,9 +65,6 @@ export const mockUserAverageSessions = {
             { day: 5, sessionLength: 20 },
             { day: 6, sessionLength: 15 },
             { day: 7, sessionLength: 50 },
-            { day: 8, sessionLength: 45 },
-            { day: 9, sessionLength: 40 },
-            { day: 10, sessionLength: 55 },
         ],
     }
 };

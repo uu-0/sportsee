@@ -15,6 +15,7 @@ const SideBarContainer = styled.div`
     justify-content: center;
     gap: 20px;
     background-color: ${colors.black};
+    z-index: 2;
 `
 
 const Copyright = styled.p`

@@ -1,43 +1,42 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import dayjs from 'dayjs'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import dayjs from 'dayjs';
 
-import styled from 'styled-components'
-import colors from '../../utils/style/colors'
+import styled from 'styled-components';
+import colors from '../utils/style/colors'
 
-import { mockUserActivity } from '../../utils/API/mockAPI'
-//import { fetchActivityData } from '../../utils/API/serviceAPI'
+import { fetchUserActivity } from '../utils/API/serviceAPI';
+
 
 const Container = styled.div`
-  padding: 20px;
-  width: 835px;
+  width: 960px;
   background-color: ${colors.gray};
   border-radius: 10px;
-`
+`;
 
 const TopContainer = styled.div`
-  margin: 10px 20px 5px 20px;
+  margin: 8px 20px 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 const Content = styled.div`
-  margin: 60px 20px 15px 20px;
+  margin: 50px 20px 0px 20px;
   position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 180px; 
-`
+  height: 180px;
+`;
 
 const Titre = styled.h3`
   margin-top: 0;
   font-size: 15px;
   font-weight: 600;
   color: ${colors.darkGray};
-`
+`;
 
 const Legende = styled.div`
   display: flex;
@@ -58,61 +57,50 @@ const Legende = styled.div`
   }
 
   .poids {
-    background-color: ${colors.darkGray}; 
+    background-color: ${colors.darkGray};
   }
 
   .calories {
-    background-color :${colors.red};
+    background-color: ${colors.red};
   }
-`
+`;
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div 
-      style={{ 
-        height: '64px',
-        background: colors.red, 
-        color: colors.white, 
-        padding: '5px 10px', 
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: '10px' }}>
+      <div
+        style={{
+          height: '64px',
+          background: colors.red,
+          color: colors.white,
+          padding: '5px 10px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '10px',
+        }}
+      >
         <p>{`${payload[0].value}kg`}</p>
         <p>{`${payload[1].value}Kcal`}</p>
       </div>
-    )
+    );
   }
   return null;
-}
+};
 
-function BarChartActivity() {
+function Activity() {
   const { userId } = useParams()
   const [activityData, setActivityData] = useState([])
 
   useEffect(() => {
-    //utilisation des données mockées
-    const activity = mockUserActivity[userId]
-    if (activity) {
-      setActivityData(activity.sessions)
-    } else {
-      console.error('Activité de l\'utilisateur non trouvée')
-    }
-
-    //version finale avec les données de l'API
-    /*
-    fetchActivityData(userId)
-      .then(data => setActivityData(data.sessions))
-      .catch(error => console.error('Erreur lors de la récupération des données:', error));
-    */
+    fetchUserActivity(userId, setActivityData)
   }, [userId])
 
-  //calcul moyenne poids
-  const moyenne = activityData.reduce((acc, session) => acc + session.kilogram, 0) / activityData.length;
-  const moyennePlusUn = moyenne + 1;
-  const moyenneMoinsUn = moyenne - 1;
+  //calcul de la moyenne du poids
+  const moyenne = activityData.reduce((acc, session) => acc + session.kilogram, 0) / activityData.length
+  const moyennePlusUn = moyenne + 1
+  const moyenneMoinsUn = moyenne - 1
 
   return (
     <Container>
@@ -139,44 +127,40 @@ function BarChartActivity() {
             }}
             barCategoryGap="20%"
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={true}/>
-            <XAxis 
+            <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={true} />
+            <XAxis
               dataKey="day"
-              stroke="transparent" 
+              stroke="transparent"
               tickFormatter={(date) => dayjs(date).format('D')}
               tick={{ fill: '#74798C', fontSize: 14 }}
               axisLine={{ stroke: '#DEDEDE', strokeWidth: 1.5 }}
             />
-            <YAxis 
+            <YAxis
               yAxisId="kg"
               dataKey="kilogram"
               orientation="right"
-              domain={[moyenneMoinsUn, moyennePlusUn]} 
-              ticks={[moyenneMoinsUn, moyenne, moyennePlusUn]} 
+              domain={[moyenneMoinsUn, moyennePlusUn]}
+              ticks={[moyenneMoinsUn, moyenne, moyennePlusUn]}
               tickFormatter={(tick) => tick.toFixed(0)}
               axisLine={false}
               tickLine={false}
               tick={{ fill: '#74798C', fontSize: 14 }}
-              allowDataOverflow={true} 
+              allowDataOverflow={true}
             />
-            <YAxis 
-              yAxisId="cal"
-              dataKey="calories"
-              hide
-            />
+            <YAxis yAxisId="cal" dataKey="calories" hide />
             <Tooltip content={<CustomTooltip />} />
-            <Bar 
+            <Bar
               yAxisId="kg"
-              dataKey="kilogram" 
-              fill="#282D30" 
-              radius={[5, 5, 0, 0]} 
+              dataKey="kilogram"
+              fill="#282D30"
+              radius={[5, 5, 0, 0]}
               barSize={7}
             />
-            <Bar 
+            <Bar
               yAxisId="cal"
-              dataKey="calories" 
-              fill="#E60000" 
-              radius={[5, 5, 0, 0]} 
+              dataKey="calories"
+              fill="#E60000"
+              radius={[5, 5, 0, 0]}
               barSize={7}
             />
           </BarChart>
@@ -184,6 +168,6 @@ function BarChartActivity() {
       </Content>
     </Container>
   );
-};
+}
 
-export default BarChartActivity;
+export default Activity

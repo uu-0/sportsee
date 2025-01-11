@@ -3,10 +3,9 @@ import { useParams } from 'react-router-dom'
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, Rectangle } from 'recharts'
 
 import styled from 'styled-components'
-import colors from '../../utils/style/colors'
+import colors from '../utils/style/colors'
 
-import { mockUserAverageSessions } from '../../utils/API/mockAPI'
-import { fetchUserAverageSessions } from '../../utils/API/serviceAPI'
+import { fetchUserAverageSession } from '../utils/API/serviceAPI'
 
 const Container = styled.div`
   width: 300px;
@@ -91,47 +90,13 @@ function CustomTooltip({ active, payload }) {
 }
 
 
-function AverageSession({ useMockData }) {
+function AverageSession() {
   const { userId } = useParams();
   const [averageData, setAverageData] = useState([]);
 
   useEffect(() => {
-    const getDayLetter = (dateString) => {
-      const days = ['D', 'L', 'M', 'M', 'J', 'V', 'S']
-      const date = new Date(dateString)
-      return days[date.getDay()]
-    }
-
-    if (useMockData) {
-      const userSessions = mockUserAverageSessions[userId]
-
-      if (userSessions) {
-
-        const formattedData = userSessions.sessions.map((session) => {
-        const sessionDate = new Date(2024, 10, session.day)
-        return {
-          ...session,
-          day: getDayLetter(new Date(sessionDate.setDate(sessionDate.getDate()))),
-        }
-        })
-        const limitedData = formattedData.slice(-9)
-        setAverageData(limitedData)
-      } else {
-        console.error('Sessions non trouvées pour cet utilisateur.')
-      }
-    } else {
-      fetchUserAverageSessions(userId)
-        .then((data) => {
-          const formattedData = data.sessions.map((session) => ({
-            ...session,
-            day: getDayLetter(session.date),
-          }));
-          const limitedData = formattedData.slice(-9)
-          setAverageData(limitedData)
-        })
-        .catch((error) => console.error('Erreur lors de la récupération des sessions:', error))
-    }
-  }, [userId, useMockData])
+    fetchUserAverageSession(userId, setAverageData)
+  }, [userId])
 
   return (
     <Container>
