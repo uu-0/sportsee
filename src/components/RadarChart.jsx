@@ -9,8 +9,8 @@ import colors from '../utils/style/colors';
 import { fetchUserPerformance } from '../utils/API/serviceAPI';
 
 const Container = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   border-radius: 5px;
   background-color: ${colors.darkGray};
   display: flex;

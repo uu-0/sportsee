@@ -8,20 +8,20 @@ import { fetchUserScore } from '../utils/API/serviceAPI'
 import colors from '../utils/style/colors'
 
 const Container = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-color: ${colors.gray};
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Nécessaire pour positionner le texte au centre */
+  position: relative;
 `
 
 const Title = styled.p`
   width: 140px;
   color: black;
-  font-size: 15px;
+  font-size: 18px;
   position: absolute;
   font-weight: bold;
   color: ${colors.darkGray};

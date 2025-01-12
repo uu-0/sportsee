@@ -10,20 +10,20 @@ import { fetchUserActivity } from '../utils/API/serviceAPI';
 
 
 const Container = styled.div`
-  width: 960px;
+  width: 1300px;
   background-color: ${colors.gray};
   border-radius: 10px;
 `;
 
 const TopContainer = styled.div`
-  margin: 8px 20px 0 20px;
+  margin: 20px 30px 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 const Content = styled.div`
-  margin: 50px 20px 0px 20px;
+  margin: 50px 20px 20px 20px;
   position: relative;
   display: flex;
   justify-content: space-around;
@@ -32,13 +32,15 @@ const Content = styled.div`
 `;
 
 const Titre = styled.h3`
-  margin-top: 0;
-  font-size: 15px;
+  margin-top: 30px;
+  margin-left: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: ${colors.darkGray};
 `;
 
 const Legende = styled.div`
+  margin-top: 30px;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;

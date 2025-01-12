@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 
 const Button = styled.div`
+    position: relative;
     width: 64px;
     height: 64px;
     border-radius: 6px;

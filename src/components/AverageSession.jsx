@@ -8,8 +8,8 @@ import colors from '../utils/style/colors'
 import { fetchUserAverageSession } from '../utils/API/serviceAPI'
 
 const Container = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   border-radius: 5px;
   background-color: ${colors.red};
   position: relative;
@@ -20,7 +20,7 @@ const Title = styled.p`
   width: 140px;
   color: white;
   opacity: 0.7;
-  font-size: 15px;
+  font-size: 18px;
   position: absolute;
   top: 8px;
   left: 30px;
@@ -55,7 +55,6 @@ function CustomDot(props) {
           />
         </filter>
       </defs>
-
       <rect
         x={cx} 
         y={cy - 300} 
@@ -66,7 +65,6 @@ function CustomDot(props) {
         ry="5" 
         style={{ zIndex: -1 }}
       />
-
       <circle 
         cx={cx} 
         cy={cy} 
@@ -102,7 +100,7 @@ function AverageSession() {
     <Container>
       <Title>Durée moyenne des sessions</Title>
       <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={averageData} margin={{ top: 100, right: 0, left: 0, bottom: 0 }}>
+      <LineChart data={averageData} margin={{ top: 150, right: 0, left: 0, bottom: 20 }}>
           <XAxis
             dataKey="day"
             axisLine={false}
@@ -111,7 +109,7 @@ function AverageSession() {
             tickFormatter={(value, index) =>
               index === 0 || index === averageData.length - 1 ? '' : value
             }
-            style={{ fontSize: '14px', opacity: 0.5, zIndex: 1 }}
+            style={{ fontSize: '18px', opacity: 0.5, zIndex: 1}}
           />
           <Tooltip content={<CustomTooltip />} cursor={false}/>
           <defs>

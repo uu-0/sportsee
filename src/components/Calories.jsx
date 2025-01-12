@@ -16,12 +16,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 30px;
-  gap: 20px;
-  width: 300px;
+  gap: 38px;
+  width: 380px;
 `
 
 const Card = styled.div`
-  height: 130px;
+  height: 150px;
   border-radius: 10px;
   background-color: ${colors.gray};
   display: flex;

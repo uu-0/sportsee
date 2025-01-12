@@ -6,7 +6,6 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 
 const SideBarContainer = styled.div`
-    position: relative;
     width: 125px;
     height: 100vh;
     display: flex;
@@ -20,11 +19,11 @@ const SideBarContainer = styled.div`
 
 const Copyright = styled.p`
     position: absolute;
-    bottom: 100px;
+    bottom: 20px;
     width: 140px;
     color: ${colors.white};
     font-size: 12px;
-    transform: rotate(-90deg)
+    transform: rotate(-90deg);
 `
 
 function SideBar() {
@@ -49,4 +48,3 @@ function SideBar() {
 }
 
 export default SideBar
-
