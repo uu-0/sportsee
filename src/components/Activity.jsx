@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, 
+         Bar, 
+         XAxis, 
+         YAxis, 
+         CartesianGrid, 
+         Tooltip, 
+         ResponsiveContainer } from 'recharts';
 import dayjs from 'dayjs';
 
 import styled from 'styled-components';

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, Rectangle } from 'recharts'
+import { LineChart, 
+         Line, 
+         XAxis, 
+         Tooltip, 
+         ResponsiveContainer } from 'recharts'
 
 import styled from 'styled-components'
 import colors from '../utils/style/colors'

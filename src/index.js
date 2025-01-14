@@ -6,6 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Accueil from './pages/Accueil';
 import Header from './components/Header';
+import Erreur from './pages/Erreur'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -22,6 +23,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/:userId" element={<Accueil />} />
+        <Route path="*" element={<Erreur />} />
       </Routes>
     </Router>
   </React.StrictMode>
